@@ -2,6 +2,8 @@
 
 # Brief
 
+Show us you can create a small app from scratch that uses a provided api
+
 ## Core
 - Build an iOS app that displays many products
 - A detail view can be displayed for an individual product
