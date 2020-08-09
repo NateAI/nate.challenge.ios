@@ -31,17 +31,6 @@ input FloatFilter {
   notIn: [Float!]
 }
 
-input IntFilter {
-  equals: Int
-  gt: Int
-  gte: Int
-  in: [Int!]
-  lt: Int
-  lte: Int
-  not: Int
-  notIn: [Int!]
-}
-
 """
 The `JSON` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -52,17 +41,6 @@ type Mutation {
   deleteOneProduct(where: ProductWhereUniqueInput!): Product
   updateOneProduct(data: ProductUpdateInput!, where: ProductWhereUniqueInput!): Product
   upsertOneProduct(create: ProductCreateInput!, update: ProductUpdateInput!, where: ProductWhereUniqueInput!): Product!
-}
-
-input NullableIntFilter {
-  equals: Int
-  gt: Int
-  gte: Int
-  in: [Int!]
-  lt: Int
-  lte: Int
-  not: Int
-  notIn: [Int!]
 }
 
 input NullableStringFilter {
@@ -81,18 +59,22 @@ input NullableStringFilter {
 
 type Product {
   createdAt: DateTime!
-  id: Int!
-  image: String
+  id: String!
+  images: [String!]!
   merchant: String
-  purchases(cursor: PurchaseWhereUniqueInput, skip: Int, take: Int): [Purchase!]!
   title: String
   updatedAt: DateTime!
   url: String
 }
 
+input ProductCreateimagesInput {
+  set: [String!]
+}
+
 input ProductCreateInput {
   createdAt: DateTime
-  image: String
+  id: String
+  images: ProductCreateimagesInput
   merchant: String
   purchases: PurchaseCreateManyWithoutProductInput
   title: String
@@ -103,16 +85,21 @@ input ProductCreateInput {
 input ProductOrderByInput {
   createdAt: SortOrder
   id: SortOrder
-  image: SortOrder
+  images: SortOrder
   merchant: SortOrder
   title: SortOrder
   updatedAt: SortOrder
   url: SortOrder
 }
 
+input ProductUpdateimagesInput {
+  set: [String!]
+}
+
 input ProductUpdateInput {
   createdAt: DateTime
-  image: String
+  id: String
+  images: ProductUpdateimagesInput
   merchant: String
   purchases: PurchaseUpdateManyWithoutProductInput
   title: String
@@ -123,8 +110,7 @@ input ProductUpdateInput {
 input ProductWhereInput {
   AND: [ProductWhereInput!]
   createdAt: DateTimeFilter
-  id: IntFilter
-  image: NullableStringFilter
+  id: UUIDFilter
   merchant: NullableStringFilter
   NOT: [ProductWhereInput!]
   OR: [ProductWhereInput!]
@@ -135,16 +121,7 @@ input ProductWhereInput {
 }
 
 input ProductWhereUniqueInput {
-  id: Int
-}
-
-type Purchase {
-  createdAt: DateTime!
-  id: Int!
-  price: Float!
-  product: Product
-  productId: Int
-  updatedAt: DateTime!
+  id: String
 }
 
 input PurchaseCreateManyWithoutProductInput {
@@ -154,6 +131,7 @@ input PurchaseCreateManyWithoutProductInput {
 
 input PurchaseCreateWithoutProductInput {
   createdAt: DateTime
+  id: String
   price: Float!
   updatedAt: DateTime
 }
@@ -167,16 +145,17 @@ input PurchaseFilter {
 input PurchaseScalarWhereInput {
   AND: [PurchaseScalarWhereInput!]
   createdAt: DateTimeFilter
-  id: IntFilter
+  id: UUIDFilter
   NOT: [PurchaseScalarWhereInput!]
   OR: [PurchaseScalarWhereInput!]
   price: FloatFilter
-  productId: NullableIntFilter
+  productId: NullableStringFilter
   updatedAt: DateTimeFilter
 }
 
 input PurchaseUpdateManyDataInput {
   createdAt: DateTime
+  id: String
   price: Float
   updatedAt: DateTime
 }
@@ -200,6 +179,7 @@ input PurchaseUpdateManyWithWhereNestedInput {
 
 input PurchaseUpdateWithoutProductDataInput {
   createdAt: DateTime
+  id: String
   price: Float
   updatedAt: DateTime
 }
@@ -218,17 +198,17 @@ input PurchaseUpsertWithWhereUniqueWithoutProductInput {
 input PurchaseWhereInput {
   AND: [PurchaseWhereInput!]
   createdAt: DateTimeFilter
-  id: IntFilter
+  id: UUIDFilter
   NOT: [PurchaseWhereInput!]
   OR: [PurchaseWhereInput!]
   price: FloatFilter
   product: ProductWhereInput
-  productId: NullableIntFilter
+  productId: NullableStringFilter
   updatedAt: DateTimeFilter
 }
 
 input PurchaseWhereUniqueInput {
-  id: Int
+  id: String
 }
 
 type Query {
@@ -239,4 +219,20 @@ type Query {
 enum SortOrder {
   asc
   desc
+}
+
+scalar UUID
+
+input UUIDFilter {
+  contains: UUID
+  endsWith: UUID
+  equals: UUID
+  gt: UUID
+  gte: UUID
+  in: [UUID!]
+  lt: UUID
+  lte: UUID
+  not: UUID
+  notIn: [UUID!]
+  startsWith: UUID
 }

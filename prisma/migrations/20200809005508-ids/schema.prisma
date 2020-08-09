@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgres"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator prisma_client_js {
@@ -12,7 +12,7 @@ model Product {
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
   title     String?
-  images    String[]
+  image     String?
   url       String?
   merchant  String?
   purchases Purchase[]
