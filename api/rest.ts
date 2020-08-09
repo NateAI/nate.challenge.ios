@@ -11,36 +11,56 @@ app.use(bodyParser.json())
 
 app.post('/products', async (req, res) => {
   const { where } = req.body
-  const posts = await prisma.product.findMany({ where, orderBy: { createdAt: 'desc' } })
-  res.json({ posts: posts || [] })
+  try {
+    const posts = await prisma.product.findMany({ where, orderBy: { createdAt: 'desc' } })
+    res.json({ posts: posts || [] })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({})
+  }
 })
 
 app.post('/products/offset', async (req, res) => {
   const { skip, take, where } = req.body
-  const posts = await prisma.product.findMany({
-    skip: Number(skip),
-    take: Number(take),
-    where,
-    orderBy: { createdAt: 'desc' }
-  })
-  res.json({ posts: posts || [] })
+  try {
+    const posts = await prisma.product.findMany({
+      skip: Number(skip),
+      take: Number(take),
+      where,
+      orderBy: { createdAt: 'desc' }
+    })
+    res.json({ posts: posts || [] })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({})
+  }
 })
 
 app.post('/products/cursor', async (req, res) => {
   const { cursor, take, where } = req.body
-  const posts = await prisma.product.findMany({
-    cursor,
-    take: Number(take),
-    where,
-    orderBy: { createdAt: 'desc' }
-  })
-  res.json(posts)
+  try {
+    const posts = await prisma.product.findMany({
+      cursor,
+      take: Number(take),
+      where,
+      orderBy: { createdAt: 'desc' }
+    })
+    res.json(posts)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({})
+  }
 })
 
 app.get(`/product/:id`, async (req, res) => {
   const { id } = req.params
-  const post = await prisma.product.findOne({ where: { id } })
-  res.json({ post: post || {} })
+  try {
+    const post = await prisma.product.findOne({ where: { id } })
+    res.json({ post: post || {} })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({})
+  }
 })
 
 app.post('/product/create', async (req, res) => {
@@ -49,7 +69,7 @@ app.post('/product/create', async (req, res) => {
     const posts = await prisma.product.create({
       data: {
         title: title as string | undefined,
-        images: { set: images as string[] | undefined },
+        images: images != null ? { set: images as string[] | undefined } : undefined,
         url: url as string | undefined,
         merchant: merchant as string | undefined
       }
@@ -57,7 +77,7 @@ app.post('/product/create', async (req, res) => {
     res.json(posts)
   } catch (error) {
     console.error(error)
-    res.json({}).status(500)
+    res.status(500).json({})
   }
 })
 
@@ -68,7 +88,7 @@ app.post('/product/update', async (req, res) => {
       where: { id: id as string | undefined },
       data: {
         title: title as string | undefined,
-        images: { set: images as string[] | undefined },
+        images: images != null ? { set: images as string[] | undefined } : undefined,
         url: url as string | undefined,
         merchant: merchant as string | undefined
       }
@@ -76,7 +96,7 @@ app.post('/product/update', async (req, res) => {
     res.json(posts)
   } catch (error) {
     console.error(error)
-    res.json({}).status(500)
+    res.status(500).json({})
   }
 })
 
@@ -87,7 +107,7 @@ app.post('/product/delete', async (req, res) => {
     res.json(posts)
   } catch (error) {
     console.error(error)
-    res.json({}).status(500)
+    res.status(500).json({})
   }
 })
 

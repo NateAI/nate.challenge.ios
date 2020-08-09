@@ -22,6 +22,10 @@
 - Dev: `yarn dev:rest`
 - Prod: `yarn start:rest`
 
+### Insomnia
+- Graph and Rest Examples in insomnia.json
+- Import into Insomnia Core, download at https://insomnia.rest
+
 ### Studio
 - To Edit the Database run `yarn prisma studio --experimental`
 
