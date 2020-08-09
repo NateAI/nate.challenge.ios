@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "nate-ios-challenge",
+  "scripts": {
+    "dev": "nexus dev",
+    "build": "nexus build",
+    "start": "node .nexus/build/api",
+    "generate": "npx prisma generate",
+    "lint": "eslint '*/**/*.{js,ts}'",
+    "format": "yarn lint --quiet --fix"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "nexus": "0.26.1",
+    "nexus-plugin-prisma": "^0.17.0"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.7",
+    "@typescript-eslint/eslint-plugin": "3.8.0",
+    "@typescript-eslint/parser": "3.8.0",
+    "eslint": "7.6.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "prettier": "2.0.5",
+    "typescript": "^3.9.7"
+  }
+}

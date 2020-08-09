@@ -1,0 +1,15 @@
+# IDE
+.idea
+.vscode
+
+# Mac
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build
+generated/
+
+# Environment
+.env
