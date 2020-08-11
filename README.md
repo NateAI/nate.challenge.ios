@@ -6,7 +6,6 @@ Show us you can create a small native iOS app from scratch that uses a provided 
 We'd love for you to present and explain to us your finished app =]
 
 ## Project
-
 Create a git repository on GitHub/BitBucket/GitLab with your project including README file.
 
 ## API
