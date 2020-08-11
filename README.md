@@ -2,7 +2,16 @@
 
 # Brief
 
-Show us you can create a small app from scratch that uses a provided api
+Show us you can create a small native iOS app from scratch that uses a provided api.
+We'd love for you to present and explain to us your finished app =]
+
+## Project
+
+Create a git repository on GitHub/BitBucket/GitLab with your project including README file.
+
+## API
+- Graph and Rest Examples in insomnia.json
+- Import into Insomnia Core, download at https://insomnia.rest
 
 ## Core
 - Build an iOS app that displays many products
@@ -11,13 +20,13 @@ Show us you can create a small app from scratch that uses a provided api
 - You can use any UIKit or SwiftUI components you like
 - Third party libraries are allowed, but should be used purposefully
 - Keep in mind UX, Performance, and Readability of code and project structure etc.
-- We'd love for you to present and explain to us your finished app =]
+- One meaningful Unit Test
 
 ## Bonus
 - Ability to add products via api, feel free to get creative here!
 - Implement seamless pagination with the endpoints provided
 - Add some style / design / animations, completely optional but don't feel limited
-- A few Unit / Automation Test(s)
+- More Unit / Automation Test(s)
 
 ## Setup
 
@@ -40,10 +49,6 @@ Show us you can create a small app from scratch that uses a provided api
 - Access: `localhost:3000`
 - Dev: `yarn dev:rest`
 - Prod: `yarn start:rest`
-
-### Insomnia
-- Graph and Rest Examples in insomnia.json
-- Import into Insomnia Core, download at https://insomnia.rest
 
 ### Studio
 - To Edit the Database run `yarn prisma studio --experimental`
