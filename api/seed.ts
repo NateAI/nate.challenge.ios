@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 const seed = async (): Promise<void> => {
   // Reset
 
-  await prisma.product.deleteMany({ where: {} })
+  // await prisma.product.deleteMany({ where: {} })
 
   // Create
 
