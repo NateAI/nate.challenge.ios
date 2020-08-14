@@ -16,7 +16,7 @@ We'd love for you to present and explain to us your finished app =]
 - One meaningful Unit Test
 
 ### Bonus Deliverables
-- Ability to add products via API, feel free to get creative here!
+- Ability to add/modify/delete products via API, feel free to get creative here!
 - Implement seamless pagination with the endpoints provided
 - Add some style / design / animations, completely optional but don't feel limited
 - More Unit / Automation Test(s)
@@ -37,9 +37,7 @@ To run the backend setup locally (REST API, GraphQL and DB Service) - install Do
 1. Follow the Docker Compose install guide (including the Docker install Pre-Eq) https://docs.docker.com/compose/install/
 2. In the root directory of this project, run command `sudo docker-compose up` to pull and run the prepared Docker images
 
-Note: In this setup the DB data will persist in the Docker Container unless the Container is removed. 
-
-If for any reason you'd like to start from a clean slate again - run command `sudo docker-compose rm` to remove all containers and `sudo docker-compose up` again
+NOTE: Any modifications to the product data will not be persisted if the container is shutdown.
 
 ### Additional Documentation
 
