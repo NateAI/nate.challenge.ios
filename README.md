@@ -1,59 +1,49 @@
 # nate.challenge.ios
 
 # Brief
-
-Show us you can create a small native iOS app from scratch that uses a provided api.
+Show us you can create a small native iOS app from scratch that uses a provided API.
 We'd love for you to present and explain to us your finished app =]
 
-## Project
-Create a git repository on GitHub/BitBucket/GitLab with your project including README file.
+## Specification
 
-## API
-- Graph and Rest Examples in insomnia.json
-- Import into Insomnia Core, download at https://insomnia.rest
-
-## Core
+### Core Deliverables
 - Build an iOS app that displays many products
 - A detail view can be displayed for an individual product
-- You can use a GraphQL or REST api
+- You can use a GraphQL or REST API
 - You can use any UIKit or SwiftUI components you like
 - Third party libraries are allowed, but should be used purposefully
 - Keep in mind UX, Performance, and Readability of code and project structure etc.
 - One meaningful Unit Test
 
-## Bonus
-- Ability to add products via api, feel free to get creative here!
+### Bonus Deliverables
+- Ability to add products via API, feel free to get creative here!
 - Implement seamless pagination with the endpoints provided
 - Add some style / design / animations, completely optional but don't feel limited
 - More Unit / Automation Test(s)
 
-## Setup
+### Submission Format
+Create a git repository on GitHub/BitBucket/GitLab with your project including README file.
 
-### Project
-- Run `yarn`
+## References
+### API
+Graph and Rest Examples are in `Insomnia.json` file
 
-### Prisma
-- Set DATABASE_URL in prisma/.env to a PostgreSQL connection string
-- Check the contents of prisma/schema.prisma is up to date
-- (Optional) Run `yarn -s prisma migrate save --experimental`
-- (Optional) Run `yarn -s prisma migrate up --experimental`
-- Run `yarn -s prisma generate`
+1. Download Insomnia Core at https://insomnia.rest
+2. Import into Insomnia Core Workspace https://support.insomnia.rest/article/52-importing-and-exporting-data
 
-### Graph
-- Access: `localhost:4000/graphql`
-- Dev: `yarn dev:graph`
-- Prod: `yarn build && yarn start:graph`
+### Backend Setup using Docker
+To run the backend setup locally (REST API, GraphQL and DB Service) - install Docker and Docker Compose
+ 
+1. Follow the Docker Compose install guide (including the Docker install Pre-Eq) https://docs.docker.com/compose/install/
+2. In the root directory of this project, run command `sudo docker-compose up` to pull and run the prepared Docker images
 
-### Rest
-- Access: `localhost:3000`
-- Dev: `yarn dev:rest`
-- Prod: `yarn start:rest`
+Note: In this setup the DB data will persist in the Docker Container unless the Container is removed. 
 
-### Studio
-- To Edit the Database run `yarn prisma studio --experimental`
+If for any reason you'd like to start from a clean slate again - run command `sudo docker-compose rm` to remove all containers and `sudo docker-compose up` again
 
-## Documentation
+### Additional Documentation
 
 - Prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/crud
 - Nexus: https://nexusjs.org/adoption-guides/prisma-users
 - Rest: https://github.com/prisma/prisma-examples/tree/master/typescript/rest-express
+- The repository also contains code for building the Docker Images from scratch and running the services locally 
