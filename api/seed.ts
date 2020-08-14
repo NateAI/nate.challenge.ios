@@ -2,7 +2,13 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-export async function seed(): Promise<void> {
+const seed = async (): Promise<void> => {
+  // Reset
+
+  await prisma.product.deleteMany({ where: {} })
+
+  // Create
+
   // prisma.product.create({
   //   data: {
   //     title: "",
@@ -84,4 +90,8 @@ export async function seed(): Promise<void> {
       merchant: 'Walmart'
     }
   })
+
+  prisma.$disconnect()
 }
+
+seed().catch((e) => console.error(e))
