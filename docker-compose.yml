@@ -1,0 +1,46 @@
+version: "3"
+services:
+  backend-rest:
+    container_name: "product-rest-service"
+    image: product-rest-service:1.0.0
+    environment:
+      - DATABASE_URL=postgres://productUser:password@postgres:5432/product
+    build:
+      dockerfile: Dockerfile.rest
+      context: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    networks:
+      - default
+
+  backend-graph:
+    container_name: "product-graph-service"
+    image: product-graph-service:1.0.0
+    environment:
+      - DATABASE_URL=postgres://productUser:password@postgres:5432/product
+    build:
+      dockerfile: Dockerfile.graph
+      context: .
+    ports:
+      - 4000:4000
+    depends_on:
+      - postgres
+    networks:
+      - default
+
+  postgres:
+    container_name: "product-db"
+    image: nateai/challenge-ios-db:1.0.0
+    environment:
+      - POSTGRES_USER=productUser
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=product
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+volumes:
+  database-data:
