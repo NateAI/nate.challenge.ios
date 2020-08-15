@@ -41,9 +41,11 @@ To run the APIs locally (REST, GraphQL, and the DB Service) - install Docker and
 3. Once the containers are running the APIs will be available
 
 ##### Note
-In this setup the DB data will persist in the Docker Container unless the Container is removed.
-- If for any reason you'd like to reset the APIs and DB Service - run command `sudo docker-compose rm` to remove all containers and `sudo docker-compose up` again
-- If you need to only reset the DB data when the containers are running - run command `yarn reset`
+Any modifications to the product data will not be persisted if the container is shutdown.
+- If you need to reset the DB data when the containers are running 
+  - run command `yarn reset`
+- If for any reason you'd like to reset both the APIs and DB Service
+  - run command `sudo docker-compose rm` to remove all containers and `sudo docker-compose up` again
 
 ### Additional Documentation
 - Prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/crud
