@@ -41,15 +41,11 @@ services:
 
   postgres:
     container_name: "product-db"
-    image: nateai/challenge-ios-db:1.0.0
+    image: postgres:12.3
     environment:
       - POSTGRES_USER=productUser
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=product
-    volumes:
-      - database-data:/var/lib/postgresql/data/
+      - PGDATA=/data
     ports:
       - 5432:5432
-
-volumes:
-  database-data:
