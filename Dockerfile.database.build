@@ -1,8 +1,12 @@
 FROM node:12.16.1-buster-slim
 
+ADD . /app
+
 WORKDIR /app
 
-ADD . /app
+ARG DATABASE_URL
+RUN rm prisma/.env
+RUN echo "DATABASE_URL=${DATABASE_URL}" > prisma/.env
 
 RUN chmod 755 /app/entrypoint-build-db.sh
 
@@ -11,6 +15,8 @@ RUN apt-get -qy install openssl
 
 RUN yarn
 
-EXPOSE 3000
-
 ENTRYPOINT ["/app/entrypoint-build-db.sh"]
+
+# RUN yarn -s prisma migrate up --experimental
+# RUN yarn -s prisma generate
+# RUN yarn seed
