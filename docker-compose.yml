@@ -27,10 +27,6 @@ services:
       - POSTGRES_USER=productUser
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=product
-    volumes:
-      - database-data:/var/lib/postgresql/data/
+      - PGDATA=/data
     ports:
       - 5432:5432
-
-volumes:
-  database-data:
