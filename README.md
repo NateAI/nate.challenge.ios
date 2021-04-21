@@ -47,7 +47,8 @@ To run the APIs locally (REST, GraphQL, and the DB Service) - install Docker and
 
 ##### Note
 Any modifications to the product data will not be persisted if the container is shutdown.
-- If you need to reset the DB data when the containers are running 
+- If you need to reset the DB data while the containers are running
+  - set up a file at `prisma/.env` and write inside `DATABASE_URL="postgres://productUser:password@localhost:5432/product"`
   - run command `yarn reset`
 - If for any reason you'd like to reset both the APIs and DB Service
   - run command `sudo docker-compose rm` to remove all containers and `sudo docker-compose up` again
