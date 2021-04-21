@@ -4,21 +4,25 @@
 Show us you can create a small native iOS app, from scratch, that uses a provided API.
 We'd love for you to present, and explain to us, your finished app =]
 
-## Specification
-
-### Core Deliverables
-- Build an iOS app that displays products, and a detail view of each product
+Core deliverables are required, and we hope to see some of the advanced deliverables.
 - You can use either the GraphQL API or REST API we provide
 - You can use any UIKit or SwiftUI components you like
 - Third party libraries are allowed, but should be used purposefully
 - Keep in mind UX, Performance, and Readability of code and project structure etc.
-- One meaningful Unit Test
 
-### Bonus Deliverables
-- Ability to add / update / remove products via API, feel free to get creative here!
-- Implement seamless pagination with the endpoints provided
-- Add some style / design / animations, completely optional but don't feel limited
-- More Unit / Automation Test(s)
+## Specification
+
+### Core Deliverables
+- Build an iOS app [min target: iOS 13+] that displays products, and a detail view of each product
+- Implement pagination with the endpoints provided for fetching products
+- In the detail view a user should be able to view the product web page, and view at least one image with the product details
+- At least one meaningful Unit Test
+
+### Advanced Deliverables
+- Display multiple images where products have multiple, feel free to get creative!
+- Ability to add / update / remove products via API endpoints provided, feel free to get creative here too!
+- Add some design / animations, completely optional but don't feel limited
+- Additional Unit / Automation Test(s)
 
 ### Submission Format
 Create a git repository on GitHub/BitBucket/GitLab with your project including README file.
