@@ -26,6 +26,7 @@ Core deliverables are required, and we hope to see some of the advanced delivera
 
 ### Submission Format
 Create a git repository on GitHub/BitBucket/GitLab with your project including README file.
+- Please make it accessible to james@nate.tech and mauro@nate.tech
 
 ## References
 
