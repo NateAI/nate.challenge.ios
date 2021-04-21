@@ -8,13 +8,13 @@ Core deliverables are required, and we hope to see some of the advanced delivera
 - You can use either the GraphQL API or REST API we provide
 - You can use any UIKit or SwiftUI components you like
 - Third party libraries are allowed, but should be used purposefully
-- Keep in mind UX, Performance, and Readability of code and project structure etc.
+- Keep in mind UX, Handling of errors and edge cases, and Readability of code and project structure etc.
 
 ## Specification
 
 ### Core Deliverables
 - Build an iOS app [min target: iOS 13+] that displays products, and a detail view of each product
-- Implement pagination with the endpoints provided for fetching products
+- Implement pagination with the endpoints provided for fetching products, with the ability to restart
 - In the detail view a user should be able to view the product web page, and view at least one image with the product details
 - At least one meaningful Unit Test
 
