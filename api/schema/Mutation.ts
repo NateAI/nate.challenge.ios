@@ -1,6 +1,6 @@
-import { schema } from 'nexus'
+import { mutationType } from 'nexus'
 
-schema.mutationType({
+export const Mutation = mutationType({
   definition(t) {
     // Product
     t.crud.createOneProduct()

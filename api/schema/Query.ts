@@ -1,8 +1,8 @@
-import { schema } from 'nexus'
+import { queryType } from 'nexus'
 
 const options = { filtering: true, ordering: true, pagination: true }
 
-schema.queryType({
+export const Query = queryType({
   definition(t) {
     // Product
     t.crud.product()

@@ -55,7 +55,7 @@ app.post('/products/cursor', async (req, res) => {
 app.get(`/product/:id`, async (req, res) => {
   const { id } = req.params
   try {
-    const post = await prisma.product.findOne({ where: { id } })
+    const post = await prisma.product.findUnique({ where: { id } })
     res.json({ post: post || {} })
   } catch (error) {
     console.error(error)
@@ -69,7 +69,7 @@ app.post('/product/create', async (req, res) => {
     const posts = await prisma.product.create({
       data: {
         title: title as string | undefined,
-        images: images != null ? { set: images as string[] | undefined } : undefined,
+        images: { set: images != null ? (images as string[]) || [] : [] },
         url: url as string | undefined,
         merchant: merchant as string | undefined
       }

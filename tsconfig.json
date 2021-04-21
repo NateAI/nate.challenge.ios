@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "lib": ["esnext"],
+    "target": "ES2018",
     "module": "commonjs",
-    "target": "es2016",
+    "lib": ["esnext"],
     "typeRoots": ["node_modules/@types", "types"],
     "plugins": [{ "name": "nexus/typescript-language-service" }],
     "esModuleInterop": true,
     "noEmit": true,
     "strict": true,
     "sourceMap": true,
-    "rootDir": "api",
-    "baseUrl": "api",
+    "outDir": "dist",
+    "rootDir": ".",
+    "baseUrl": ".",
     "paths": {
-      "*": ["*"]
+      "api/*": ["api/*"]
     }
   },
   "exclude": ["node_modules"],
