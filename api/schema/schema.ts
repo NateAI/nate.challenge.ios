@@ -1,12 +1,25 @@
-import { makeSchema } from 'nexus'
+import { makeSchema, objectType } from 'nexus'
 
-import { nexusPrisma } from 'nexus-plugin-prisma'
+import { nexusPrisma } from '@kenchi/nexus-plugin-prisma'
 
 import { join } from 'path'
 
 import { Query } from 'api/schema/Query'
 import { Mutation } from 'api/schema/Mutation'
-import { Product } from 'api/schema/Models'
+// import { Product } from 'api/schema/Models'
+
+export const Product = objectType({
+  name: 'Product',
+  definition(t) {
+    // t.model.id()
+    // t.model.createdAt()
+    // t.model.updatedAt()
+    // t.model.title()
+    // t.model.images()
+    // t.model.url()
+    // t.model.merchant()
+  }
+})
 
 export const schema = makeSchema({
   types: [Query, Mutation, Product],

@@ -1,5 +1,4 @@
 import express from 'express'
-import bodyParser from 'body-parser'
 
 import { PrismaClient } from '@prisma/client'
 
@@ -7,7 +6,7 @@ const prisma = new PrismaClient()
 
 const app = express()
 
-app.use(bodyParser.json())
+app.use(express.json())
 
 app.post('/products', async (req, res) => {
   const { where } = req.body

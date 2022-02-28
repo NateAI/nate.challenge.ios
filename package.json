@@ -11,42 +11,49 @@
     "generate": "yarn -s generate:prisma && yarn -s generate:nexus",
     "generate:prisma": "prisma generate",
     "generate:nexus": "NODE_ENV=development ts-node --transpile-only api/schema/schema",
-    "reset": "ts-node -r tsconfig-paths/register api/seed.ts",
     "start": "concurrently \"yarn start:graph\" \"yarn start:rest\"",
     "start:graph": "node .nexus/build/api",
     "start:rest": "ts-node -r tsconfig-paths/register api/rest.ts",
     "lint": "eslint '*/**/*.{js,ts}'",
-    "format": "yarn lint --quiet --fix"
+    "format": "yarn lint --quiet --fix",
+    "setup": "yarn migrate-new && yarn seed",
+    "migrate-new": "npx prisma migrate dev --name init",
+    "migrate-old": "prisma migrate save --experimental -c && prisma migrate up --experimental -c",
+    "seed": "npx prisma db seed",
+    "up": "docker-compose up -d --build",
+    "down": "docker-compose down"
+  },
+  "prisma": {
+    "seed": "ts-node api/seed.ts"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.2.0"
   },
   "dependencies": {
-    "@prisma/client": "2.23.0",
-    "apollo-server": "2.24.1",
-    "body-parser": "1.19.0",
+    "@kenchi/nexus-plugin-prisma": "^0.40.0",
+    "@prisma/client": "3.6.x",
+    "apollo-server": "3.6.3",
     "cors": "2.8.5",
-    "express": "4.17.1",
-    "graphql": "15.5.0",
-    "nexus": "1.0.0",
-    "nexus-plugin-prisma": "0.35.0"
+    "express": "4.17.3",
+    "graphql": "^15.4.0",
+    "graphql-scalars": "1.14.1",
+    "nexus": "^1.0.0"
   },
   "devDependencies": {
-    "@types/body-parser": "1.19.0",
-    "@types/cors": "2.8.10",
-    "@types/express": "4.17.11",
-    "@types/node": "15.6.1",
-    "@typescript-eslint/eslint-plugin": "4.25.0",
-    "@typescript-eslint/parser": "4.25.0",
-    "concurrently": "6.2.0",
-    "eslint": "7.27.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-prettier": "3.4.0",
-    "prettier": "2.3.0",
-    "prisma": "2.23.0",
-    "ts-node": "10.0.0",
-    "ts-node-dev": "1.1.6",
-    "tsconfig-paths": "3.9.0",
-    "typescript": "4.2.4"
+    "@types/cors": "2.8.12",
+    "@types/express": "4.17.13",
+    "@types/node": "15.6.x",
+    "@typescript-eslint/eslint-plugin": "5.12.1",
+    "@typescript-eslint/parser": "5.12.1",
+    "concurrently": "7.0.0",
+    "eslint": "8.10.0",
+    "eslint-config-prettier": "8.4.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "prettier": "2.5.1",
+    "prisma": "3.6.0",
+    "ts-node": "10.5.0",
+    "ts-node-dev": "1.1.8",
+    "tsconfig-paths": "3.12.0",
+    "typescript": "4.5.5"
   }
 }

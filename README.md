@@ -37,8 +37,9 @@ Graph and Rest Examples are in `Insomnia.json` file
 2. Import into Insomnia Core Workspace https://support.insomnia.rest/article/52-importing-and-exporting-data
 
 ##### Access
-- GraphQL: http://localhost:4000/graphql
 - REST: http://localhost:3000
+- GraphQL: http://localhost:4000/graphql
+- PGAdmin: http://localhost:5000
 
 ### API Setup using Docker
 To run the APIs locally (REST, GraphQL, and the DB Service) - install Docker and Docker Compose

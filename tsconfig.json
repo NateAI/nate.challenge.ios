@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "commonjs",
-    "lib": ["esnext"],
-    "typeRoots": ["node_modules/@types", "types"],
-    "plugins": [{ "name": "nexus/typescript-language-service" }],
-    "esModuleInterop": true,
-    "noEmit": true,
     "strict": true,
     "sourceMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "target": "es2016",
+    "module": "commonjs",
     "outDir": "dist",
     "rootDir": ".",
     "baseUrl": ".",
@@ -16,7 +14,7 @@
       "api/*": ["api/*"]
     }
   },
-  "exclude": ["node_modules"],
-  "include": ["api", "types.d.ts"],
+  "exclude": ["node_modules", "prisma/**/*"],
+  "include": ["api", "types.d.ts", "api/seed.ts"],
   "compileOnSave": false
 }

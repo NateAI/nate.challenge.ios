@@ -1,32 +1,47 @@
-version: "3"
+version: '3.8'
 services:
-  backend-rest:
-    container_name: "product-rest-service"
-    image: nateai/challenge-ios-rest:1.0.0
-    environment:
-      - DATABASE_URL=postgres://productUser:password@postgres:5432/product
-    ports:
-      - 3000:3000
-    depends_on:
-      - postgres
-
-  backend-graph:
-    container_name: "product-graph-service"
-    image: nateai/challenge-ios-graph:1.0.0
-    environment:
-      - DATABASE_URL=postgres://productUser:password@postgres:5432/product
-    ports:
-      - 4000:4000
-    depends_on:
-      - postgres
-
   postgres:
-    container_name: "product-db"
-    image: nateai/challenge-ios-db:1.0.0
+    image: postgres
+    restart: always
     environment:
-      - POSTGRES_USER=productUser
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=product
-      - PGDATA=/data
+      POSTGRES_USER: nate 
+      POSTGRES_PASSWORD: access
+      POSTGRES_DB: product
     ports:
-      - 5432:5432
+      - 6543:5432
+
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   restart: always
+  #   environment:
+  #     PGADMIN_DEFAULT_: wkjenfjwke
+  #     PGADMIN_DEFAULT_EMAIL: nate@nate.tech
+  #     PGADMIN_DEFAULT_PASSWORD: access
+  #   ports:
+  #     - "7000:80"
+  #   depends_on:
+  #     - postgres
+
+  seed:
+    image: nateai/challenge-ios-seed:1.0.0
+    environment:
+      DATABASE_URL: postgres://nate:access@postgres:5432/product
+    build:
+      dockerfile: Dockerfile.seed
+      context: .
+    depends_on:
+      - postgres
+
+  # api:
+  #   image: nateai/challenge-ios-api:1.0.0
+  #   environment:
+  #     DATABASE_URL: postgres://nate:access@postgres:5432/product
+  #   build:
+  #     dockerfile: Dockerfile.api
+  #     context: .
+  #   ports:
+  #     - 3000:3000
+  #     - 4000:4000
+  #   depends_on:
+  #     - postgres
+  #     - seed

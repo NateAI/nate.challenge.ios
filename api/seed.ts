@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-const seed = async (): Promise<void> => {
+async function seed() {
   // Reset
 
   await prisma.product.deleteMany({ where: {} })
@@ -85,8 +85,7 @@ const seed = async (): Promise<void> => {
     data: {
       title: '',
       images: { set: ['none'] },
-      url:
-        'https://www.walmart.com/ip/Hamilton-Beach-The-Scoop-Single-Serve-Coffee-Maker-Single-Serve-Brewer-14-oz-Stainless-Steel-47550/911356214',
+      url: 'https://www.walmart.com/ip/Hamilton-Beach-The-Scoop-Single-Serve-Coffee-Maker-Single-Serve-Brewer-14-oz-Stainless-Steel-47550/911356214',
       merchant: 'Walmart'
     }
   })
@@ -117,8 +116,7 @@ const seed = async (): Promise<void> => {
           'https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3802000/ff_3802240-4b85edcce601a42d6641_full.jpg'
         ]
       },
-      url:
-        'https://www.fanatics.com/mlb/washington-nationals/juan-soto-washington-nationals-nike-youth-2020-gold-program-replica-player-jersey-white/gold/o-7887+t-58234569+p-8153449092+z-8-1618303961?_ref=p-CLP:m-GRID:i-r4c0:po-12',
+      url: 'https://www.fanatics.com/mlb/washington-nationals/juan-soto-washington-nationals-nike-youth-2020-gold-program-replica-player-jersey-white/gold/o-7887+t-58234569+p-8153449092+z-8-1618303961?_ref=p-CLP:m-GRID:i-r4c0:po-12',
       merchant: 'Fanatics'
     }
   })
@@ -429,8 +427,7 @@ const seed = async (): Promise<void> => {
     data: {
       title: 'Ultra High Rise Ankle Straight Jeans',
       images: { set: [] },
-      url:
-        'https://www.abercrombie.com/shop/us/p/ultra-high-rise-ankle-straight-jeans-41996353?categoryId=6234532&seq=01&faceout=prod1',
+      url: 'https://www.abercrombie.com/shop/us/p/ultra-high-rise-ankle-straight-jeans-41996353?categoryId=6234532&seq=01&faceout=prod1',
       merchant: 'Abercrombie & Fitch'
     }
   })
@@ -443,13 +440,17 @@ const seed = async (): Promise<void> => {
           'https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3802000/ff_3802240-4b85edcce601a42d6641_full.jpg'
         ]
       },
-      url:
-        'https://www.fanatics.com/mlb/washington-nationals/juan-soto-washington-nationals-nike-youth-2020-gold-program-replica-player-jersey-white/gold/o-7887+t-58234569+p-8153449092+z-8-1618303961?_ref=p-CLP:m-GRID:i-r4c0:po-12',
+      url: 'https://www.fanatics.com/mlb/washington-nationals/juan-soto-washington-nationals-nike-youth-2020-gold-program-replica-player-jersey-white/gold/o-7887+t-58234569+p-8153449092+z-8-1618303961?_ref=p-CLP:m-GRID:i-r4c0:po-12',
       merchant: 'Fanatics'
     }
   })
-
-  prisma.$disconnect()
 }
 
-seed().catch((e) => console.error(e))
+seed()
+  .catch((e) => {
+    console.error(e)
+    throw e
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })
