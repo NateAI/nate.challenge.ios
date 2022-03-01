@@ -2,61 +2,61 @@
 
 # Brief
 Show us you can create a small native iOS app, from scratch, that uses a provided API.
-We'd love for you to present, and explain to us, your finished app =]
+We'd love for you to present, and explain to us, your solution =]
+
+### Running the API
+The API provided can be consumed via GraphQL or REST, and are hosted in Docker containers, to run them:
+1. Install Docker (includes Docker Compose) on your mac: https://docs.docker.com/desktop/mac/install/
+2. In the root directory of this project, run command `yarn up` to pull and run the prepared Docker images
+3. Once the containers are running the APIs will be available for use
+
+# Specification
 
 Core deliverables are required, and we hope to see some of the advanced deliverables.
-- You can use either the GraphQL API or REST API we provide
-- You can use any UIKit or SwiftUI components you like
-- Third party libraries are allowed, but should be used purposefully
-- Keep in mind UX, Handling of errors and edge cases, and Readability of code and project structure etc.
-
-## Specification
+- You can use either the GraphQL or REST API we provide (no preference)
+- Explore the API as much as you need to, reviewing the code may help but should not be necessary
+- You can use any UIKit or SwiftUI components you like (no preference)
+- Third party libraries are allowed, but should be used purposefully when there isn't a reasonable solution in the core libraries
+- Keep in mind the UX, Handling of errors and edge cases, and Readability of code and project structure etc.
 
 ### Core Deliverables
-- Build an iOS app [min target: iOS 13+] that displays products, and a detail view of each product
-- Implement pagination with the endpoints provided for fetching products, with the ability to restart
-- In the detail view a user should be able to view the product web page, and view at least one image with the product details
-- At least one meaningful Unit Test
+- Build an iOS app [min target: iOS 14+] that displays products, and a detail view of each product
+- Implement pagination with the endpoints provided for fetching products, with the ability to refresh
+- In the detail view a user should be able to at least
+  - view at least one image with the product details listed
+  - view the product web page
+- Include at least one meaningful Unit Test and UI Test each
 
 ### Advanced Deliverables
-- Display multiple images where products have multiple, feel free to get creative!
-- Ability to add / update / remove products via API endpoints provided, feel free to get creative here too!
+- Display multiple images where products have multiple, feel free to get creative in choice of UI!
+- Ability to add / update / remove products via API, feel free to get creative here too!
 - Add some design / animations, completely optional but don't feel limited
-- Additional Unit / Automation Test(s)
+- Additional Unit / UI Automation Test(s)
 
 ### Submission Format
 Create a git repository on GitHub/BitBucket/GitLab with your project including README file.
-- We'd like to see your git process if possible (branches and commit history)
-- Please make it accessible to james@nate.tech and mauro@nate.tech
+- We'd like to see your git workflow if possible (branches and commit history)
+- Please make it accessible to james@nate.tech, mauro@nate.tech, and rado@nate.tech
 
-## References
+# References
 
-### APIs
-Graph and Rest Examples are in `Insomnia.json` file
+### API
+GraphQL and REST Example requests are available to explore and experiment with in the `Insomnia.json` file
 1. Download Insomnia Core at https://insomnia.rest
 2. Import into Insomnia Core Workspace https://support.insomnia.rest/article/52-importing-and-exporting-data
-
-##### Access
+Access them via:
 - REST: http://localhost:3000
 - GraphQL: http://localhost:4000/graphql
-- PGAdmin: http://localhost:5000
 
-### API Setup using Docker
-To run the APIs locally (REST, GraphQL, and the DB Service) - install Docker and Docker Compose
-1. Follow the Docker Compose install guide (including the Docker install Pre-Eq) https://docs.docker.com/compose/install/
-2. In the root directory of this project, run command `sudo docker-compose up` to pull and run the prepared Docker images
-3. Once the containers are running the APIs will be available
-
-##### Note
+### Database
 Any modifications to the product data will not be persisted if the container is shutdown.
-- If you need to reset the DB data while the containers are running
-  - set up a file at `prisma/.env` and write inside `DATABASE_URL="postgres://productUser:password@localhost:5432/product"`
-  - run command `yarn reset`
 - If for any reason you'd like to reset both the APIs and DB Service
-  - run command `sudo docker-compose rm` to remove all containers and `sudo docker-compose up` again
+  - run command `yarn down` to remove all containers and `yarn up` again
 
-### Additional Documentation
-- Prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/crud
-- Nexus: https://nexusjs.org/adoption-guides/prisma-users
-- Rest: https://github.com/prisma/prisma-examples/tree/master/typescript/rest-express
-- The repository also contains code for building the Docker Images from scratch and running the services locally 
+### Documentation
+- Prisma: https://www.prisma.io/docs/
+- GraphQL: https://graphql.org/learn/
+- REST: https://www.codecademy.com/article/what-is-rest
+- Express: http://expressjs.com
+- TypeGraphQL: https://prisma.typegraphql.com
+- Docker: https://docs.docker.com/desktop/mac/install/

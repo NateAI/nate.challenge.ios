@@ -5,7 +5,7 @@ WORKDIR /app
 ADD . /app
 
 RUN yarn
-RUN yarn build
+RUN yarn generate
 
 EXPOSE 3000
 EXPOSE 4000

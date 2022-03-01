@@ -1,10 +1,24 @@
+import 'reflect-metadata'
+
+import path from 'path'
+
+import { buildSchema } from 'type-graphql'
+
 import { ApolloServer } from 'apollo-server'
 
-import { schema } from 'api/schema/schema'
-import { createContext } from 'api/schema/context'
+import { createContext } from 'api/context'
 
-const server = new ApolloServer({ schema, context: createContext(), cors: true })
+import { crudResolvers } from 'prisma/generated/type-graphql'
 
-server.listen().then(({ url }) => {
+async function main() {
+  const schema = await buildSchema({
+    resolvers: [...crudResolvers],
+    emitSchemaFile: path.resolve(__dirname, '../prisma/generated/graphql/generated-schema.graphql'),
+    validate: false
+  })
+  const server = new ApolloServer({ schema, context: createContext(), cors: true })
+  const { url } = await server.listen(4000)
   console.log(`🚀 Server ready at ${url}`)
-})
+}
+
+main().catch(console.error)

@@ -8,7 +8,7 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "ignorePatterns": ["**/node_modules/", "**/dist/", "**/samples/", "**/scripts/"],
+  "ignorePatterns": ["**/node_modules/", "**/dist/", "**/samples/", "**/scripts/", "**/generated/"],
   "rules": {
     "react/prop-types": "off"
   },

@@ -1,26 +1,17 @@
 version: '3.8'
 services:
   postgres:
-    image: postgres
+    image: nateai/challenge-ios-db:1.0.0
     restart: always
     environment:
       POSTGRES_USER: nate 
       POSTGRES_PASSWORD: access
       POSTGRES_DB: product
+    build:
+      dockerfile: Dockerfile.db
+      context: .
     ports:
       - 6543:5432
-
-  # pgadmin:
-  #   image: dpage/pgadmin4
-  #   restart: always
-  #   environment:
-  #     PGADMIN_DEFAULT_: wkjenfjwke
-  #     PGADMIN_DEFAULT_EMAIL: nate@nate.tech
-  #     PGADMIN_DEFAULT_PASSWORD: access
-  #   ports:
-  #     - "7000:80"
-  #   depends_on:
-  #     - postgres
 
   seed:
     image: nateai/challenge-ios-seed:1.0.0
@@ -32,16 +23,16 @@ services:
     depends_on:
       - postgres
 
-  # api:
-  #   image: nateai/challenge-ios-api:1.0.0
-  #   environment:
-  #     DATABASE_URL: postgres://nate:access@postgres:5432/product
-  #   build:
-  #     dockerfile: Dockerfile.api
-  #     context: .
-  #   ports:
-  #     - 3000:3000
-  #     - 4000:4000
-  #   depends_on:
-  #     - postgres
-  #     - seed
+  api:
+    image: nateai/challenge-ios-api:1.0.0
+    environment:
+      DATABASE_URL: postgres://nate:access@postgres:5432/product
+    build:
+      dockerfile: Dockerfile.api
+      context: .
+    ports:
+      - 3000:3000
+      - 4000:4000
+    depends_on:
+      - postgres
+      - seed
