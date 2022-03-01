@@ -1,0 +1,12 @@
+export { AggregatePurchaseArgs } from "./AggregatePurchaseArgs";
+export { CreateManyPurchaseArgs } from "./CreateManyPurchaseArgs";
+export { CreatePurchaseArgs } from "./CreatePurchaseArgs";
+export { DeleteManyPurchaseArgs } from "./DeleteManyPurchaseArgs";
+export { DeletePurchaseArgs } from "./DeletePurchaseArgs";
+export { FindFirstPurchaseArgs } from "./FindFirstPurchaseArgs";
+export { FindManyPurchaseArgs } from "./FindManyPurchaseArgs";
+export { FindUniquePurchaseArgs } from "./FindUniquePurchaseArgs";
+export { GroupByPurchaseArgs } from "./GroupByPurchaseArgs";
+export { UpdateManyPurchaseArgs } from "./UpdateManyPurchaseArgs";
+export { UpdatePurchaseArgs } from "./UpdatePurchaseArgs";
+export { UpsertPurchaseArgs } from "./UpsertPurchaseArgs";

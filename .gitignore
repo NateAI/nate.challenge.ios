@@ -9,8 +9,7 @@
 node_modules/
 
 # Build
-.nexus
-generated/
+# generated/
 
 # Environment
-.env
+# .env
