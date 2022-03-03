@@ -6,9 +6,10 @@ We'd love for you to present, and explain to us, your solution =]
 
 ### Running the API
 The API provided can be consumed via GraphQL or REST, and are hosted in Docker containers, to run them:
-1. Install Docker (includes Docker Compose) on your mac: https://docs.docker.com/desktop/mac/install/
+1. Install and run Docker on your mac (includes Docker Compose): https://docs.docker.com/desktop/mac/install/
 2. In the root directory of this project, run command `yarn up` to pull and run the prepared Docker images
 3. Once the containers are running the APIs will be available for use
+4. [Optional] Visual Studio Code has a useful Docker extension to visualise the state of images and containers
 
 # Specification
 
@@ -44,7 +45,9 @@ Create a git repository on GitHub/BitBucket/GitLab with your project including R
 GraphQL and REST Example requests are available to explore and experiment with in the `Insomnia.json` file
 1. Download Insomnia Core at https://insomnia.rest
 2. Import into Insomnia Core Workspace https://support.insomnia.rest/article/52-importing-and-exporting-data
+3. Feel free to change the parameters in any of the requests to test edge cases
 Access them via:
+- Postgresql: Port 6543 (See .env for the full connection string)
 - REST: http://localhost:3000
 - GraphQL: http://localhost:4000/graphql
 
