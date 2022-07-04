@@ -54,7 +54,8 @@ Access them via:
 ### Database
 Any modifications to the product data will not be persisted if the container is shutdown.
 - If for any reason you'd like to reset both the APIs and DB Service
-  - run command `yarn down` to remove all containers and `yarn up` again
+  - Run command `yarn down` to remove all containers and `yarn up` again
+  - You may need to start db-seed again if there is a race condition with db setup
 
 ### Documentation
 - Prisma: https://www.prisma.io/docs/
@@ -63,3 +64,6 @@ Any modifications to the product data will not be persisted if the container is 
 - Express: http://expressjs.com
 - TypeGraphQL: https://prisma.typegraphql.com
 - Docker: https://docs.docker.com/desktop/mac/install/
+
+### Help
+- Email: james@nate.tech
