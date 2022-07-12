@@ -1,1 +1,532 @@
-{"_type":"export","__export_format":4,"__export_date":"2022-03-01T11:08:08.176Z","__export_source":"insomnia.desktop.app:v2021.7.2","resources":[{"_id":"req_826e6eaf5c6a428c91dc31f28d2ba1b4","parentId":"fld_ca50effa3daa4c00888986b969f2669d","modified":1646132735193,"created":1596978953081,"url":"http://localhost:3000/products","name":"/products","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"where\": {\n\t\t\"title\": {\n\t\t\t\"contains\": \"Steel\"\n\t\t}\n\t}\n}\n"},"parameters":[],"headers":[{"id":"pair_ca92a27cf5b54d93862cfaf68a69d145","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934608089,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_ca50effa3daa4c00888986b969f2669d","parentId":"wrk_0b3f39a4e78c4f39afaa998b3ba66828","modified":1596935336383,"created":1596935336383,"name":"Rest","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1596935336383,"_type":"request_group"},{"_id":"wrk_0b3f39a4e78c4f39afaa998b3ba66828","parentId":null,"modified":1596934592997,"created":1596934592997,"name":"iOS Challenge","description":"","scope":"collection","_type":"workspace"},{"_id":"req_92c2fb3599ba4ac3803d0a63a8f4ef56","parentId":"fld_ca50effa3daa4c00888986b969f2669d","modified":1646132776041,"created":1596934724556,"url":"http://localhost:3000/products/offset","name":"/products/offset","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"skip\": 0,\n\t\"take\": 2\n}\n"},"parameters":[],"headers":[{"id":"pair_d4ae542382bd41c88a3a2faf47152e96","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934608064,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_7087d5d398a7495cae9efeab4801dd83","parentId":"fld_ca50effa3daa4c00888986b969f2669d","modified":1646132796163,"created":1596935207466,"url":"http://localhost:3000/products/cursor","name":"/products/cursor (start)","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"take\": 3\n}\n"},"parameters":[],"headers":[{"id":"pair_f74efe93da584f2da3950d2c7000d954","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934608014,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_e903601409404a8da09d010fa057bc36","parentId":"fld_ca50effa3daa4c00888986b969f2669d","modified":1646132843023,"created":1596984495200,"url":"http://localhost:3000/products/cursor","name":"/products/cursor","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"cursor\": {\n\t\t\"id\": \"0ca90176-0711-4839-8fc1-27fc02bcd7da\"\n\t},\n\t\"take\": 2\n}\n"},"parameters":[],"headers":[{"id":"pair_f74efe93da584f2da3950d2c7000d954","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596856548574.625,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_88c62cf54c3844a3baeb92266b50a66e","parentId":"fld_ca50effa3daa4c00888986b969f2669d","modified":1597664796899,"created":1596934608114,"url":"http://localhost:3000/product/0ca90176-0711-4839-8fc1-27fc02bcd7da","name":"/product/:id","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1596778489135.25,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_759a4752a5164e2faf806ddfce0635bd","parentId":"fld_ca50effa3daa4c00888986b969f2669d","modified":1646132848511,"created":1596980949663,"url":"http://localhost:3000/product/create","name":"/product/create","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"title\": \"\",\n\t\"images\": [],\n\t\"url\": \"\",\n\t\"merchant\": \"\"\n}\n"},"parameters":[{"description":"","disabled":true,"id":"pair_fd738c3586ec4c53a7bd2ab3dc3f75aa","name":"id","value":"1001039828399"}],"headers":[{"id":"pair_f74efe93da584f2da3950d2c7000d954","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596622370256.5,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_80cd19e1ee864affb1fef8eecf872bee","parentId":"fld_ca50effa3daa4c00888986b969f2669d","modified":1646132850327,"created":1596981039769,"url":"http://localhost:3000/product/update","name":"/product/update","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"id\": \"09ffa2d6-8307-4161-b763-746f84775351\",\n\t\"title\": \"\",\n\t\"images\": [],\n\t\"url\": \"\",\n\t\"merchant\": \"\"\n}\n"},"parameters":[{"description":"","disabled":true,"id":"pair_fd738c3586ec4c53a7bd2ab3dc3f75aa","name":"id","value":"1001039828399"}],"headers":[{"id":"pair_f74efe93da584f2da3950d2c7000d954","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596466251377.75,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_56d8dea12d5c4f27a106b7f2dfd304d2","parentId":"fld_ca50effa3daa4c00888986b969f2669d","modified":1646132865410,"created":1596981046593,"url":"http://localhost:3000/product/delete","name":"/product/delete","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"id\": \"09ffa2d6-8307-4161-b763-746f84775351\"\n}\n"},"parameters":[{"description":"","disabled":true,"id":"pair_fd738c3586ec4c53a7bd2ab3dc3f75aa","name":"id","value":"1001039828399"}],"headers":[{"id":"pair_f74efe93da584f2da3950d2c7000d954","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596388191938.375,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_62dfcb833dc1496bad961984d6f6d8a0","parentId":"fld_7dd8d7ede9414397a23e087a0c23355f","modified":1646132751375,"created":1596978910644,"url":"http://localhost:4000/graphql","name":"GetProducts","description":"","method":"POST","body":{"mimeType":"application/graphql","text":"{\"query\":\"query GetProductsOffset($search: String) {\\n\\tproducts(\\n\\t\\twhere: { title: { contains: $search } }\\n\\t\\torderBy: { createdAt: desc }\\n\\t) {\\n\\t\\tid\\n\\t\\tcreatedAt\\n\\t\\tupdatedAt\\n\\t\\ttitle\\n\\t\\timages\\n\\t\\turl\\n\\t\\tmerchant\\n\\t}\\n}\\n\",\"variables\":{\"search\":\"Steel\"},\"operationName\":\"GetProductsOffset\"}"},"parameters":[],"headers":[{"id":"pair_1c03094bcbdc4396adeb25e7ec5b150b","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596935168520.75,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_7dd8d7ede9414397a23e087a0c23355f","parentId":"wrk_0b3f39a4e78c4f39afaa998b3ba66828","modified":1596935331904,"created":1596935331904,"name":"Graph","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1596935331904,"_type":"request_group"},{"_id":"req_fddb81b71cce46169bea36d2db2a00e8","parentId":"fld_7dd8d7ede9414397a23e087a0c23355f","modified":1646132768458,"created":1596977959912,"url":"http://localhost:4000/graphql","name":"GetProductsOffset","description":"","method":"POST","body":{"mimeType":"application/graphql","text":"{\"query\":\"query GetProductsOffset($take: Int, $skip: Int, $where: ProductWhereInput) {\\n  products(take: $take, skip: $skip, where: $where, orderBy: {createdAt: desc}) {\\n    id\\n    createdAt\\n    updatedAt\\n    title\\n    images\\n    url\\n    merchant\\n  }\\n}\\n\",\"variables\":{\"take\":2,\"skip\":0},\"operationName\":\"GetProductsOffset\"}"},"parameters":[],"headers":[{"id":"pair_f50ffe786499419fa49ca94f0e70b8a2","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934981718.5,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_0511d902734d4e5ea64deed554814be9","parentId":"fld_7dd8d7ede9414397a23e087a0c23355f","modified":1646132784206,"created":1596984521483,"url":"http://localhost:4000/graphql","name":"GetProductsCursor (start)","description":"","method":"POST","body":{"mimeType":"application/graphql","text":"{\"query\":\"query GetProductsCursor($cursor: ProductWhereUniqueInput, $take: Int, $where: ProductWhereInput) {\\n  products(cursor: $cursor, take: $take, where: $where, orderBy: {createdAt: desc}) {\\n    id\\n    createdAt\\n    updatedAt\\n    title\\n    images\\n    url\\n    merchant\\n  }\\n}\\n\",\"variables\":{\"take\":3},\"operationName\":\"GetProductsCursor\"}"},"parameters":[],"headers":[{"id":"pair_f50ffe786499419fa49ca94f0e70b8a2","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934888317.375,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_13cf99fa4cca4462bf5ccb090fa3c36d","parentId":"fld_7dd8d7ede9414397a23e087a0c23355f","modified":1646132839979,"created":1596978023678,"url":"http://localhost:4000/graphql","name":"GetProductsCursor","description":"","method":"POST","body":{"mimeType":"application/graphql","text":"{\"query\":\"query GetProductsCursor($cursor: ProductWhereUniqueInput, $take: Int, $where: ProductWhereInput) {\\n  products(cursor: $cursor, take: $take, where: $where, orderBy: {createdAt: desc}) {\\n    id\\n    createdAt\\n    updatedAt\\n    title\\n    images\\n    url\\n    merchant\\n  }\\n}\\n\",\"variables\":{\"cursor\":{\"id\":\"0ca90176-0711-4839-8fc1-27fc02bcd7da\"},\"take\":2},\"operationName\":\"GetProductsCursor\"}"},"parameters":[],"headers":[{"id":"pair_f50ffe786499419fa49ca94f0e70b8a2","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934794916.25,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_8f153397f7564088a8ee669967dbac48","parentId":"fld_7dd8d7ede9414397a23e087a0c23355f","modified":1646132821321,"created":1596935355323,"url":"http://localhost:4000/graphql","name":"GetProduct","description":"","method":"POST","body":{"mimeType":"application/graphql","text":"{\"query\":\"query GetProduct($id: String) {\\n  product(where: {id: $id}) {\\n    id\\n    title\\n  }\\n}\\n\",\"variables\":{\"id\":\"0ca90176-0711-4839-8fc1-27fc02bcd7da\"},\"operationName\":\"GetProduct\"}"},"parameters":[],"headers":[{"id":"pair_f50ffe786499419fa49ca94f0e70b8a2","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934794891.25,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_5c0129bf0e3a47b295535d6b3b117b75","parentId":"fld_7dd8d7ede9414397a23e087a0c23355f","modified":1646132844842,"created":1596978093154,"url":"http://localhost:4000/graphql","name":"CreateProduct","description":"","method":"POST","body":{"mimeType":"application/graphql","text":"{\"query\":\"mutation CreateProduct($title: String, $images: [String!]!, $url: String, $merchant: String) {\\n\\tcreateProduct(data: {title: $title, images: {set: $images}, url: $url, merchant: $merchant}) {\\n    id\\n    title\\n  }\\n}\\n\",\"variables\":{\"title\":\"\",\"images\":[],\"url\":\"\",\"merchant\":\"\"},\"operationName\":\"CreateProduct\"}"},"parameters":[],"headers":[{"id":"pair_b9b5f12201ac4f11895dd0a6a4be51a8","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934794866.25,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_ddab838a59a3420094ff911f2871296a","parentId":"fld_7dd8d7ede9414397a23e087a0c23355f","modified":1646132861536,"created":1596980732272,"url":"http://localhost:4000/graphql","name":"UpdateProduct","description":"","method":"POST","body":{"mimeType":"application/graphql","text":"{\"query\":\"mutation UpdateProduct(\\n  $id: String\\n  $title: String\\n  $images: [String!]\\n  $url: String\\n  $merchant: String\\n) {\\n  updateProduct(\\n    where: { id: $id }\\n    data: {\\n      title: { set: $title }\\n      images: { set: $images }\\n      url: { set: $url }\\n      merchant: { set: $merchant }\\n    }\\n  ) {\\n    id\\n    title\\n  }\\n}\\n\\n\",\"variables\":{\"id\":\"09ffa2d6-8307-4161-b763-746f84775351\",\"title\":\"\",\"images\":[],\"url\":\"\",\"merchant\":\"\"},\"operationName\":\"UpdateProduct\"}"},"parameters":[],"headers":[{"id":"pair_b9b5f12201ac4f11895dd0a6a4be51a8","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934701490.125,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_a80b321d7af4431a954a80e457f968c8","parentId":"fld_7dd8d7ede9414397a23e087a0c23355f","modified":1646132870168,"created":1596980889831,"url":"http://localhost:4000/graphql","name":"DeleteProduct","description":"","method":"POST","body":{"mimeType":"application/graphql","text":"{\"query\":\"mutation DeleteProduct($id: String) {\\n  deleteProduct(where: {id: $id}) {\\n    id\\n    title\\n  }\\n}\\n\",\"variables\":{\"id\":\"09ffa2d6-8307-4161-b763-746f84775351\"},\"operationName\":\"DeleteProduct\"}"},"parameters":[],"headers":[{"id":"pair_b9b5f12201ac4f11895dd0a6a4be51a8","name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1596934654802.0625,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"env_6123116c383f01c68788b23384c8166da936acdd","parentId":"wrk_0b3f39a4e78c4f39afaa998b3ba66828","modified":1596934593217,"created":1596934593217,"name":"Base Environment","data":{},"dataPropertyOrder":null,"color":null,"isPrivate":false,"metaSortKey":1596934593217,"_type":"environment"},{"_id":"jar_6123116c383f01c68788b23384c8166da936acdd","parentId":"wrk_0b3f39a4e78c4f39afaa998b3ba66828","modified":1596934593220,"created":1596934593220,"name":"Default Jar","cookies":[],"_type":"cookie_jar"},{"_id":"spc_80c25aea901d45c3bcbbd37bab05990e","parentId":"wrk_0b3f39a4e78c4f39afaa998b3ba66828","modified":1596934593005,"created":1596934593005,"fileName":"iOS Challenge","contents":"","contentType":"yaml","_type":"api_spec"}]}
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-03-01T11:08:08.176Z",
+  "__export_source": "insomnia.desktop.app:v2021.7.2",
+  "resources": [
+    {
+      "_id": "req_826e6eaf5c6a428c91dc31f28d2ba1b4",
+      "parentId": "fld_ca50effa3daa4c00888986b969f2669d",
+      "modified": 1646132735193,
+      "created": 1596978953081,
+      "url": "http://localhost:3000/products",
+      "name": "/products",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"where\": {\n\t\t\"title\": {\n\t\t\t\"contains\": \"Steel\"\n\t\t}\n\t}\n}\n"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_ca92a27cf5b54d93862cfaf68a69d145", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934608089,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_ca50effa3daa4c00888986b969f2669d",
+      "parentId": "wrk_0b3f39a4e78c4f39afaa998b3ba66828",
+      "modified": 1596935336383,
+      "created": 1596935336383,
+      "name": "Rest",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1596935336383,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_0b3f39a4e78c4f39afaa998b3ba66828",
+      "parentId": null,
+      "modified": 1596934592997,
+      "created": 1596934592997,
+      "name": "iOS Challenge",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_92c2fb3599ba4ac3803d0a63a8f4ef56",
+      "parentId": "fld_ca50effa3daa4c00888986b969f2669d",
+      "modified": 1646132776041,
+      "created": 1596934724556,
+      "url": "http://localhost:3000/products/offset",
+      "name": "/products/offset",
+      "description": "",
+      "method": "POST",
+      "body": { "mimeType": "application/json", "text": "{\n\t\"skip\": 0,\n\t\"take\": 2\n}\n" },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_d4ae542382bd41c88a3a2faf47152e96", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934608064,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_7087d5d398a7495cae9efeab4801dd83",
+      "parentId": "fld_ca50effa3daa4c00888986b969f2669d",
+      "modified": 1646132796163,
+      "created": 1596935207466,
+      "url": "http://localhost:3000/products/cursor",
+      "name": "/products/cursor (start)",
+      "description": "",
+      "method": "POST",
+      "body": { "mimeType": "application/json", "text": "{\n\t\"take\": 3\n}\n" },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_f74efe93da584f2da3950d2c7000d954", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934608014,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e903601409404a8da09d010fa057bc36",
+      "parentId": "fld_ca50effa3daa4c00888986b969f2669d",
+      "modified": 1646132843023,
+      "created": 1596984495200,
+      "url": "http://localhost:3000/products/cursor",
+      "name": "/products/cursor",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"cursor\": {\n\t\t\"id\": \"0ca90176-0711-4839-8fc1-27fc02bcd7da\"\n\t},\n\t\"take\": 2\n}\n"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_f74efe93da584f2da3950d2c7000d954", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596856548574.625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_88c62cf54c3844a3baeb92266b50a66e",
+      "parentId": "fld_ca50effa3daa4c00888986b969f2669d",
+      "modified": 1597664796899,
+      "created": 1596934608114,
+      "url": "http://localhost:3000/product/0ca90176-0711-4839-8fc1-27fc02bcd7da",
+      "name": "/product/:id",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1596778489135.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_759a4752a5164e2faf806ddfce0635bd",
+      "parentId": "fld_ca50effa3daa4c00888986b969f2669d",
+      "modified": 1646132848511,
+      "created": 1596980949663,
+      "url": "http://localhost:3000/product/create",
+      "name": "/product/create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"\",\n\t\"images\": [],\n\t\"url\": \"\",\n\t\"merchant\": \"\"\n}\n"
+      },
+      "parameters": [
+        {
+          "description": "",
+          "disabled": true,
+          "id": "pair_fd738c3586ec4c53a7bd2ab3dc3f75aa",
+          "name": "id",
+          "value": "1001039828399"
+        }
+      ],
+      "headers": [
+        { "id": "pair_f74efe93da584f2da3950d2c7000d954", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596622370256.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_80cd19e1ee864affb1fef8eecf872bee",
+      "parentId": "fld_ca50effa3daa4c00888986b969f2669d",
+      "modified": 1646132850327,
+      "created": 1596981039769,
+      "url": "http://localhost:3000/product/update",
+      "name": "/product/update",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": \"09ffa2d6-8307-4161-b763-746f84775351\",\n\t\"title\": \"\",\n\t\"images\": [],\n\t\"url\": \"\",\n\t\"merchant\": \"\"\n}\n"
+      },
+      "parameters": [
+        {
+          "description": "",
+          "disabled": true,
+          "id": "pair_fd738c3586ec4c53a7bd2ab3dc3f75aa",
+          "name": "id",
+          "value": "1001039828399"
+        }
+      ],
+      "headers": [
+        { "id": "pair_f74efe93da584f2da3950d2c7000d954", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596466251377.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_56d8dea12d5c4f27a106b7f2dfd304d2",
+      "parentId": "fld_ca50effa3daa4c00888986b969f2669d",
+      "modified": 1646132865410,
+      "created": 1596981046593,
+      "url": "http://localhost:3000/product/delete",
+      "name": "/product/delete",
+      "description": "",
+      "method": "POST",
+      "body": { "mimeType": "application/json", "text": "{\n\t\"id\": \"09ffa2d6-8307-4161-b763-746f84775351\"\n}\n" },
+      "parameters": [
+        {
+          "description": "",
+          "disabled": true,
+          "id": "pair_fd738c3586ec4c53a7bd2ab3dc3f75aa",
+          "name": "id",
+          "value": "1001039828399"
+        }
+      ],
+      "headers": [
+        { "id": "pair_f74efe93da584f2da3950d2c7000d954", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596388191938.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_62dfcb833dc1496bad961984d6f6d8a0",
+      "parentId": "fld_7dd8d7ede9414397a23e087a0c23355f",
+      "modified": 1646132751375,
+      "created": 1596978910644,
+      "url": "http://localhost:4000/graphql",
+      "name": "GetProducts",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"query GetProductsOffset($search: String) {\\n\\tproducts(\\n\\t\\twhere: { title: { contains: $search } }\\n\\t\\torderBy: { createdAt: desc }\\n\\t) {\\n\\t\\tid\\n\\t\\tcreatedAt\\n\\t\\tupdatedAt\\n\\t\\ttitle\\n\\t\\timages\\n\\t\\turl\\n\\t\\tmerchant\\n\\t}\\n}\\n\",\"variables\":{\"search\":\"Steel\"},\"operationName\":\"GetProductsOffset\"}"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_1c03094bcbdc4396adeb25e7ec5b150b", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596935168520.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_7dd8d7ede9414397a23e087a0c23355f",
+      "parentId": "wrk_0b3f39a4e78c4f39afaa998b3ba66828",
+      "modified": 1596935331904,
+      "created": 1596935331904,
+      "name": "Graph",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1596935331904,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_fddb81b71cce46169bea36d2db2a00e8",
+      "parentId": "fld_7dd8d7ede9414397a23e087a0c23355f",
+      "modified": 1646132768458,
+      "created": 1596977959912,
+      "url": "http://localhost:4000/graphql",
+      "name": "GetProductsOffset",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"query GetProductsOffset($take: Int, $skip: Int, $where: ProductWhereInput) {\\n  products(take: $take, skip: $skip, where: $where, orderBy: {createdAt: desc}) {\\n    id\\n    createdAt\\n    updatedAt\\n    title\\n    images\\n    url\\n    merchant\\n  }\\n}\\n\",\"variables\":{\"take\":2,\"skip\":0},\"operationName\":\"GetProductsOffset\"}"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_f50ffe786499419fa49ca94f0e70b8a2", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934981718.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_0511d902734d4e5ea64deed554814be9",
+      "parentId": "fld_7dd8d7ede9414397a23e087a0c23355f",
+      "modified": 1646132784206,
+      "created": 1596984521483,
+      "url": "http://localhost:4000/graphql",
+      "name": "GetProductsCursor (start)",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"query GetProductsCursor($cursor: ProductWhereUniqueInput, $take: Int, $where: ProductWhereInput) {\\n  products(cursor: $cursor, take: $take, where: $where, orderBy: {createdAt: desc}) {\\n    id\\n    createdAt\\n    updatedAt\\n    title\\n    images\\n    url\\n    merchant\\n  }\\n}\\n\",\"variables\":{\"take\":3},\"operationName\":\"GetProductsCursor\"}"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_f50ffe786499419fa49ca94f0e70b8a2", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934888317.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_13cf99fa4cca4462bf5ccb090fa3c36d",
+      "parentId": "fld_7dd8d7ede9414397a23e087a0c23355f",
+      "modified": 1646132839979,
+      "created": 1596978023678,
+      "url": "http://localhost:4000/graphql",
+      "name": "GetProductsCursor",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"query GetProductsCursor($cursor: ProductWhereUniqueInput, $take: Int, $where: ProductWhereInput) {\\n  products(cursor: $cursor, take: $take, where: $where, orderBy: {createdAt: desc}) {\\n    id\\n    createdAt\\n    updatedAt\\n    title\\n    images\\n    url\\n    merchant\\n  }\\n}\\n\",\"variables\":{\"cursor\":{\"id\":\"0ca90176-0711-4839-8fc1-27fc02bcd7da\"},\"take\":2},\"operationName\":\"GetProductsCursor\"}"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_f50ffe786499419fa49ca94f0e70b8a2", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934794916.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8f153397f7564088a8ee669967dbac48",
+      "parentId": "fld_7dd8d7ede9414397a23e087a0c23355f",
+      "modified": 1646132821321,
+      "created": 1596935355323,
+      "url": "http://localhost:4000/graphql",
+      "name": "GetProduct",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"query GetProduct($id: String) {\\n  product(where: {id: $id}) {\\n    id\\n    title\\n  }\\n}\\n\",\"variables\":{\"id\":\"0ca90176-0711-4839-8fc1-27fc02bcd7da\"},\"operationName\":\"GetProduct\"}"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_f50ffe786499419fa49ca94f0e70b8a2", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934794891.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_5c0129bf0e3a47b295535d6b3b117b75",
+      "parentId": "fld_7dd8d7ede9414397a23e087a0c23355f",
+      "modified": 1646132844842,
+      "created": 1596978093154,
+      "url": "http://localhost:4000/graphql",
+      "name": "CreateOneProduct",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation CreateOneProduct($title: String, $images: [String!]!, $url: String, $merchant: String) {\\n\\tcreateOneProduct(data: {title: $title, images: {set: $images}, url: $url, merchant: $merchant}) {\\n    id\\n    title\\n  }\\n}\\n\",\"variables\":{\"title\":\"\",\"images\":[],\"url\":\"\",\"merchant\":\"\"},\"operationName\":\"CreateOneProduct\"}"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_b9b5f12201ac4f11895dd0a6a4be51a8", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934794866.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ddab838a59a3420094ff911f2871296a",
+      "parentId": "fld_7dd8d7ede9414397a23e087a0c23355f",
+      "modified": 1646132861536,
+      "created": 1596980732272,
+      "url": "http://localhost:4000/graphql",
+      "name": "UpdateOneProduct",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation UpdateOneProduct(\\n  $id: String\\n  $title: String\\n  $images: [String!]\\n  $url: String\\n  $merchant: String\\n) {\\n  updateOneProduct(\\n    where: { id: $id }\\n    data: {\\n      title: { set: $title }\\n      images: { set: $images }\\n      url: { set: $url }\\n      merchant: { set: $merchant }\\n    }\\n  ) {\\n    id\\n    title\\n  }\\n}\\n\\n\",\"variables\":{\"id\":\"09ffa2d6-8307-4161-b763-746f84775351\",\"title\":\"\",\"images\":[],\"url\":\"\",\"merchant\":\"\"},\"operationName\":\"UpdateOneProduct\"}"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_b9b5f12201ac4f11895dd0a6a4be51a8", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934701490.125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_a80b321d7af4431a954a80e457f968c8",
+      "parentId": "fld_7dd8d7ede9414397a23e087a0c23355f",
+      "modified": 1646132870168,
+      "created": 1596980889831,
+      "url": "http://localhost:4000/graphql",
+      "name": "DeleteOneProduct",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation DeleteOneProduct($id: String) {\\n  deleteOneProduct(where: {id: $id}) {\\n    id\\n    title\\n  }\\n}\\n\",\"variables\":{\"id\":\"09ffa2d6-8307-4161-b763-746f84775351\"},\"operationName\":\"DeleteOneProduct\"}"
+      },
+      "parameters": [],
+      "headers": [
+        { "id": "pair_b9b5f12201ac4f11895dd0a6a4be51a8", "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1596934654802.0625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_6123116c383f01c68788b23384c8166da936acdd",
+      "parentId": "wrk_0b3f39a4e78c4f39afaa998b3ba66828",
+      "modified": 1596934593217,
+      "created": 1596934593217,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1596934593217,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_6123116c383f01c68788b23384c8166da936acdd",
+      "parentId": "wrk_0b3f39a4e78c4f39afaa998b3ba66828",
+      "modified": 1596934593220,
+      "created": 1596934593220,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_80c25aea901d45c3bcbbd37bab05990e",
+      "parentId": "wrk_0b3f39a4e78c4f39afaa998b3ba66828",
+      "modified": 1596934593005,
+      "created": 1596934593005,
+      "fileName": "iOS Challenge",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}

@@ -283,6 +283,10 @@ input ProductCountOrderByAggregateInput {
   url: SortOrder
 }
 
+input ProductCreateimagesInput {
+  set: [String!]!
+}
+
 input ProductCreateInput {
   createdAt: DateTime
   id: String
@@ -323,10 +327,6 @@ input ProductCreateWithoutPurchasesInput {
   title: String
   updatedAt: DateTime
   url: String
-}
-
-input ProductCreateimagesInput {
-  set: [String!]!
 }
 
 type ProductGroupBy {
@@ -419,15 +419,20 @@ enum ProductScalarFieldEnum {
 
 input ProductScalarWhereWithAggregatesInput {
   AND: [ProductScalarWhereWithAggregatesInput!]
-  NOT: [ProductScalarWhereWithAggregatesInput!]
-  OR: [ProductScalarWhereWithAggregatesInput!]
   createdAt: DateTimeWithAggregatesFilter
   id: StringWithAggregatesFilter
   images: StringNullableListFilter
   merchant: StringNullableWithAggregatesFilter
+  NOT: [ProductScalarWhereWithAggregatesInput!]
+  OR: [ProductScalarWhereWithAggregatesInput!]
   title: StringNullableWithAggregatesFilter
   updatedAt: DateTimeWithAggregatesFilter
   url: StringNullableWithAggregatesFilter
+}
+
+input ProductUpdateimagesInput {
+  push: [String!]
+  set: [String!]
 }
 
 input ProductUpdateInput {
@@ -471,11 +476,6 @@ input ProductUpdateWithoutPurchasesInput {
   url: NullableStringFieldUpdateOperationsInput
 }
 
-input ProductUpdateimagesInput {
-  push: [String!]
-  set: [String!]
-}
-
 input ProductUpsertWithoutPurchasesInput {
   create: ProductCreateWithoutPurchasesInput!
   update: ProductUpdateWithoutPurchasesInput!
@@ -483,12 +483,12 @@ input ProductUpsertWithoutPurchasesInput {
 
 input ProductWhereInput {
   AND: [ProductWhereInput!]
-  NOT: [ProductWhereInput!]
-  OR: [ProductWhereInput!]
   createdAt: DateTimeFilter
   id: StringFilter
   images: StringNullableListFilter
   merchant: StringNullableFilter
+  NOT: [ProductWhereInput!]
+  OR: [ProductWhereInput!]
   purchases: PurchaseListRelationFilter
   title: StringNullableFilter
   updatedAt: DateTimeFilter
@@ -666,10 +666,10 @@ enum PurchaseScalarFieldEnum {
 
 input PurchaseScalarWhereInput {
   AND: [PurchaseScalarWhereInput!]
-  NOT: [PurchaseScalarWhereInput!]
-  OR: [PurchaseScalarWhereInput!]
   createdAt: DateTimeFilter
   id: StringFilter
+  NOT: [PurchaseScalarWhereInput!]
+  OR: [PurchaseScalarWhereInput!]
   price: FloatFilter
   productId: StringNullableFilter
   updatedAt: DateTimeFilter
@@ -677,10 +677,10 @@ input PurchaseScalarWhereInput {
 
 input PurchaseScalarWhereWithAggregatesInput {
   AND: [PurchaseScalarWhereWithAggregatesInput!]
-  NOT: [PurchaseScalarWhereWithAggregatesInput!]
-  OR: [PurchaseScalarWhereWithAggregatesInput!]
   createdAt: DateTimeWithAggregatesFilter
   id: StringWithAggregatesFilter
+  NOT: [PurchaseScalarWhereWithAggregatesInput!]
+  OR: [PurchaseScalarWhereWithAggregatesInput!]
   price: FloatWithAggregatesFilter
   productId: StringNullableWithAggregatesFilter
   updatedAt: DateTimeWithAggregatesFilter
@@ -709,11 +709,6 @@ input PurchaseUpdateManyMutationInput {
   updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
-input PurchaseUpdateManyWithWhereWithoutProductInput {
-  data: PurchaseUpdateManyMutationInput!
-  where: PurchaseScalarWhereInput!
-}
-
 input PurchaseUpdateManyWithoutProductInput {
   connect: [PurchaseWhereUniqueInput!]
   connectOrCreate: [PurchaseCreateOrConnectWithoutProductInput!]
@@ -728,9 +723,9 @@ input PurchaseUpdateManyWithoutProductInput {
   upsert: [PurchaseUpsertWithWhereUniqueWithoutProductInput!]
 }
 
-input PurchaseUpdateWithWhereUniqueWithoutProductInput {
-  data: PurchaseUpdateWithoutProductInput!
-  where: PurchaseWhereUniqueInput!
+input PurchaseUpdateManyWithWhereWithoutProductInput {
+  data: PurchaseUpdateManyMutationInput!
+  where: PurchaseScalarWhereInput!
 }
 
 input PurchaseUpdateWithoutProductInput {
@@ -738,6 +733,11 @@ input PurchaseUpdateWithoutProductInput {
   id: StringFieldUpdateOperationsInput
   price: FloatFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input PurchaseUpdateWithWhereUniqueWithoutProductInput {
+  data: PurchaseUpdateWithoutProductInput!
+  where: PurchaseWhereUniqueInput!
 }
 
 input PurchaseUpsertWithWhereUniqueWithoutProductInput {
@@ -748,10 +748,10 @@ input PurchaseUpsertWithWhereUniqueWithoutProductInput {
 
 input PurchaseWhereInput {
   AND: [PurchaseWhereInput!]
-  NOT: [PurchaseWhereInput!]
-  OR: [PurchaseWhereInput!]
   createdAt: DateTimeFilter
   id: StringFilter
+  NOT: [PurchaseWhereInput!]
+  OR: [PurchaseWhereInput!]
   price: FloatFilter
   product: ProductRelationFilter
   productId: StringNullableFilter
