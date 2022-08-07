@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   postgres:
-    image: nateai/challenge-ios-db:1.0.0
+    image: nateai/challenge-ios-db:1.2.0
     restart: always
     environment:
       POSTGRES_USER: nate 
@@ -14,7 +14,7 @@ services:
       - 6543:5432
 
   seed:
-    image: nateai/challenge-ios-seed:1.0.0
+    image: nateai/challenge-ios-seed:1.2.0
     environment:
       DATABASE_URL: postgres://nate:access@postgres:5432/product
     build:
@@ -24,7 +24,7 @@ services:
       - postgres
 
   api:
-    image: nateai/challenge-ios-api:1.0.0
+    image: nateai/challenge-ios-api:1.2.0
     environment:
       DATABASE_URL: postgres://nate:access@postgres:5432/product
     build:

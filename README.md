@@ -5,11 +5,34 @@ Show us you can create a small native iOS app, from scratch, that uses a provide
 We'd love for you to present, and explain to us, your solution =]
 
 ### Running the API
-The API provided can be consumed via GraphQL or REST, and are hosted in Docker containers, to run them:
-1. Install and run Docker on your mac (includes Docker Compose): https://docs.docker.com/desktop/mac/install/
-2. In the root directory of this project, run command `yarn up` to pull and run the prepared Docker images
-3. Once the containers are running the APIs will be available for use
-4. [Optional] Visual Studio Code has a useful Docker extension to visualise the state of images and containers
+The API provided can be consumed via GraphQL or REST, and are hosted in Docker containers, 
+- We've used Docker to containerise the APIs and Database to ensure you have a reliable and consistent experience
+- You are not required to learn or understand Docker, Node, or any of the API code, although feel free to do this if you wish
+
+To run the APIs and set up the Database:
+1. Install and run Docker on your mac (This install includes Docker Compose): 
+- https://docs.docker.com/desktop/mac/install/
+2. Install node.js and yarn
+- node.js
+```bash
+# Installing node.js via Homebrew [https://brew.sh]
+brew install node
+# Installing node.js via Node GUI
+https://nodejs.org/en/
+```
+- yarn
+```bash
+# Installing yarn via node.js
+npm install -g yarn
+# Installing yarn via Corepack
+https://yarnpkg.com/getting-started/install
+```
+3. In the root directory of this project, run command `yarn up` to pull and run the prepared Docker images
+- Visual Studio Code has a useful Docker extension to visualise the state of images and containers
+4. Once the containers are running the APIs will be available for use, explore and use the apis available:
+- Import Insomnia.json into Insomnia app (a REST client) to see the api schema and experiment before you integrate
+5. You can inspect the database (PostgreSQL) via any compatible database client you like
+- See the access credentials required to access the instance in docker-compose.yml
 
 # Specification
 
@@ -26,6 +49,7 @@ Core deliverables are required, and we hope to see some of the advanced delivera
 - In the detail view a user should be able to at least
   - view at least one image with the product details listed
   - view the product web page
+- Handle edge cases (missing data, api unavailable etc.)
 - Include at least one meaningful Unit Test and UI Test each
 
 ### Advanced Deliverables
@@ -39,15 +63,16 @@ Create a git repository on GitHub/BitBucket/GitLab with your project including R
 - We'd like to see your git workflow if possible (branches and commit history)
 - Please make it accessible to james@nate.tech, mauro@nate.tech, and rado@nate.tech
 
-# References
+## References
 
 ### API
 GraphQL and REST Example requests are available to explore and experiment with in the `Insomnia.json` file
 1. Download Insomnia Core at https://insomnia.rest
 2. Import into Insomnia Core Workspace https://support.insomnia.rest/article/52-importing-and-exporting-data
 3. Feel free to change the parameters in any of the requests to test edge cases
+
 Access them via:
-- Postgresql: Port 6543 (See .env for the full connection string)
+- Postgresql: Port 6543 (See docker-compose.yml for the full connection string)
 - REST: http://localhost:3000
 - GraphQL: http://localhost:4000/graphql
 
@@ -58,12 +83,15 @@ Any modifications to the product data will not be persisted if the container is 
   - You may need to start db-seed again if there is a race condition with db setup
 
 ### Documentation
-- Prisma: https://www.prisma.io/docs/
-- GraphQL: https://graphql.org/learn/
 - REST: https://www.codecademy.com/article/what-is-rest
+- GraphQL: https://graphql.org/learn/
+- Prisma: https://www.prisma.io/docs/
 - Express: http://expressjs.com
 - TypeGraphQL: https://prisma.typegraphql.com
-- Docker: https://docs.docker.com/desktop/mac/install/
+- Docker: https://docs.docker.com/
+- Node: https://nodejs.org/en/
+- Yarn: https://yarnpkg.com
+- Insomnia: https://insomnia.rest
 
 ### Help
 - Email: james@nate.tech
